@@ -1,0 +1,32 @@
+{
+  "sheets_upload_interval_seconds": 300,
+  "mqtt_keepalive": 60,
+  "sensor_timeout_seconds": 30,
+  "sensor_connectivity_check_seconds": 60,
+
+  "default_circulator_fan_pwm": 0,
+  "default_light_pwm": 0,
+
+  "vpd_min": 0.12,
+  "vpd_max": 0.25,
+
+  "averaging_fields": [
+    "temperature_f",
+    "humidity_rh",
+    "dew_point_f",
+    "vpd_kpa",
+    "lux",
+    "outside_temp_f",
+    "outside_humidity_rh",
+    "cloud_coverage_pct"
+  ],
+
+  "mode_fields": [
+    "circulator_fan_pwm",
+    "light_pwm",
+    "exhaust_fan_pwm",
+    "season_state",
+    "intent_window",
+    "control_mode"
+  ]
+}

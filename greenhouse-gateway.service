@@ -1,0 +1,30 @@
+[Unit]
+Description=Greenhouse Gateway Service
+After=network-online.target mosquitto.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=miles
+Group=miles
+WorkingDirectory=/mnt/ssd/Projects/greenhouse
+Environment="PYTHONUNBUFFERED=1"
+
+# Run the gateway
+ExecStart=/usr/bin/python3 -m greenhouse_gateway.main
+
+# Restart policy
+Restart=always
+RestartSec=10
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=greenhouse-gateway
+
+# Security hardening
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
